@@ -57,7 +57,7 @@ $(function() {
             returnValue = false;
         }
         //符号
-        var haveSymbol = $("#wpCharName, #wpAuthor, #wpSrcUrl").filter(function() { return /[·~。（）()!@#$%^&*]/.test($(this).val()); });
+        var haveSymbol = $("#wpCharName, #wpAuthor, #wpSrcUrl").filter(function() { return /[。（）#$%^&*]/.test($(this).val()); });
         if (haveSymbol.length > 0) {
             haveSymbol.addClass("inputError");
             var haveSymbolRow = uploadFormMsgRow.clone();
