@@ -12,7 +12,7 @@
 		]
 	},
 	"AutoloadClasses": {
-		"MoeUploadHooks": "MoeUpload/MoeUpload.php"
+		"MoeUploadHooks": "includes/MoeUpload.php"
 	},
 	"Hooks": {
 		"UploadFormInitDescriptor": [
@@ -31,7 +31,7 @@
 				"mediawiki.jqueryMsg"
 			],
 			"scripts": [
-				"MoeUpload/MoeUpload.js"
+				"MoeUpload.js"
 			],
 			"messages": [
 				"moeupload-Moe",
@@ -52,8 +52,8 @@
 		}
 	},
 	"ResourceFileModulePaths": {
-		"localBasePath": "",
-		"remoteExtPath": "MoeUpload"
+		"localBasePath": "resources",
+		"remoteExtPath": "MoeUpload/resources"
 	},
 	"manifest_version": 2
 }
