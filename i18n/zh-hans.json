@@ -1,13 +1,13 @@
 {
-    "moemoeQMoe": "萌",
-    "moemoeQCharName": "人物名",
-    "moemoeQAuthor": "作者",
-    "moemoeQSrcUrl": "源地址",
-    "moemoeQdec": "[http://zh.moegirl.org/ 萌娘百科]式上传页面增强插件",
-    "moemoeQForManagementOnly": "仅供管理使用",
-    "moemoeQPageInsteadOfImg": "建议您在此处输入页面地址，而非文件链接。",
-    "moemoeQSameAsSourceURL": "您输入的源地址与文件的来源地址相同，建议您在此处输入页面地址，而非文件链接。",
-    "moemoeQNoFile": "您既未选择文件也未输入来源地址，请检查。",
-    "moemoeQNoDetail": "＞_＜ 【人物名、作者名、源地址】不能全部为空~！",
-    "moemoeQHaveSymbol": "＞_＜ 【人物名、作者名、源地址】不能包含特殊符号~！请不要写多余的内容 [·~。（）()!@#$%^&*]"
+	"moemoeQMoe": "萌",
+	"moemoeQCharName": "人物名",
+	"moemoeQAuthor": "作者",
+	"moemoeQSrcUrl": "源地址",
+	"moemoeQdec": "[http://zh.moegirl.org/ 萌娘百科]式上传页面增强插件",
+	"moemoeQForManagementOnly": "仅供管理使用",
+	"moemoeQPageInsteadOfImg": "建议您在此处输入页面地址，而非文件链接。",
+	"moemoeQSameAsSourceURL": "您输入的源地址与文件的来源地址相同，建议您在此处输入页面地址，而非文件链接。",
+	"moemoeQNoFile": "您既未选择文件也未输入来源地址，请检查。",
+	"moemoeQNoDetail": "＞_＜ 【人物名、作者名、源地址】不能全部为空~！",
+	"moemoeQHaveSymbol": "＞_＜ 【人物名、作者名、源地址】不能包含特殊符号~！请不要写多余的内容 [·~。（）()!@#$%^&*]"
 }

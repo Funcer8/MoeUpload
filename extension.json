@@ -1,62 +1,62 @@
 {
-  "name": "MoeUpload",
-  "author": "March, nybux.tsui, XpAhH, baskice, dreamnong and AnnAngela",
-  "url": "https://github.com/moegirlwiki/MoeUpload",
-  "descriptionmsg": "moemoeQdec",
-  "version": "1.3.0",
-  "license-name": "BSD-2-Clause",
-  "type": "parserhook",
-  "MessagesDirs": {
-    "MoeUpload": [
-      "i18n"
-    ]
-  },
-  "AutoloadClasses": {
-    "MoeUpload\\Hooks": "MoeUpload/MoeUpload.php"
-  },
-  "Hooks": {
-    "UploadFormInitDescriptor": [
-      "MoeUpload\\Hooks::onUploadFormInitDescriptor"
-    ],
-    "UploadForm:BeforeProcessing": [
-      "MoeUpload\\Hooks::BeforeProcessing"
-    ],
-    "UploadForm:initial": [
-      "MoeUpload\\Hooks::MoeUploadUploadForminitial"
-    ]
-  },
-  "ResourceModules": {
-    "ext.MoeUpload": {
-      "dependencies": [
-        "mediawiki.jqueryMsg"
-      ],
-      "scripts": [
-        "MoeUpload/MoeUpload.js"
-      ],
-      "styles": [
-        "MoeUpload/MoeUpload.css"
-      ],
-      "messages": [
-        "moemoeQMoe",
-        "moemoeQCharName",
-        "moemoeQAuthor",
-        "moemoeQSrcUrl",
-        "moemoeQdec",
-        "moemoeQForManagementOnly",
-        "moemoeQPageInsteadOfImg",
-        "moemoeQSameAsSourceURL",
-        "moemoeQNoFile",
-        "moemoeQNoDetail",
-        "moemoeQHaveSymbol",
-      ],
-      "targets": [
-        "desktop"
-      ]
-    }
-  },
-  "ResourceFileModulePaths": {
-    "localBasePath":  "",
-    "remoteExtPath": "MoeUpload"
-  },
-  "manifest_version": 2
+	"name": "MoeUpload",
+	"author": "March, nybux.tsui, XpAhH, baskice, dreamnong and AnnAngela",
+	"url": "https://github.com/moegirlwiki/MoeUpload",
+	"descriptionmsg": "moemoeQdec",
+	"version": "1.3.0",
+	"license-name": "BSD-2-Clause",
+	"type": "parserhook",
+	"MessagesDirs": {
+		"MoeUpload": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"MoeUploadHooks": "MoeUpload/MoeUpload.php"
+	},
+	"Hooks": {
+		"UploadFormInitDescriptor": [
+			"MoeUploadHooks::onUploadFormInitDescriptor"
+		],
+		"UploadForm:BeforeProcessing": [
+			"MoeUploadHooks::BeforeProcessing"
+		],
+		"UploadForm:initial": [
+			"MoeUploadHooks::MoeUploadUploadForminitial"
+		]
+	},
+	"ResourceModules": {
+		"ext.MoeUpload": {
+			"dependencies": [
+				"mediawiki.jqueryMsg"
+			],
+			"scripts": [
+				"MoeUpload/MoeUpload.js"
+			],
+			"styles": [
+				"MoeUpload/MoeUpload.css"
+			],
+			"messages": [
+				"moemoeQMoe",
+				"moemoeQCharName",
+				"moemoeQAuthor",
+				"moemoeQSrcUrl",
+				"moemoeQdec",
+				"moemoeQForManagementOnly",
+				"moemoeQPageInsteadOfImg",
+				"moemoeQSameAsSourceURL",
+				"moemoeQNoFile",
+				"moemoeQNoDetail",
+				"moemoeQHaveSymbol"
+			],
+			"targets": [
+				"desktop"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "MoeUpload"
+	},
+	"manifest_version": 2
 }
