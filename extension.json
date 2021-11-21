@@ -19,10 +19,10 @@
 			"MoeUploadHooks::onUploadFormInitDescriptor"
 		],
 		"UploadForm:BeforeProcessing": [
-			"MoeUploadHooks::BeforeProcessing"
+			"MoeUploadHooks::onBeforeProcessing"
 		],
 		"UploadForm:initial": [
-			"MoeUploadHooks::MoeUploadUploadForminitial"
+			"MoeUploadHooks::onUploadForm_initial"
 		]
 	},
 	"ResourceModules": {

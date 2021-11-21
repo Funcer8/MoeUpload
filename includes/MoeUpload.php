@@ -2,9 +2,8 @@
 //在上传界面增加三个字段
 
 class MoeUploadHooks {
-	public static function MoeUploadUploadForminitial ( $outputPage ) {
-		global $wgOut;
-		$wgOut -> addModules( 'ext.MoeUpload' );
+	public static function onUploadForm_initial( $specialPage ) {
+		$specialPage->getOutput()->addModules( 'ext.MoeUpload' );
 		return true;
 	}
 
@@ -38,37 +37,39 @@ class MoeUploadHooks {
 		return true;
 	}
 
-	public static function BeforeProcessing( &$uploadFormObj ) {
-		if( $uploadFormObj->mRequest->getFileName( 'wpUploadFile' ) !== null || $uploadFormObj->mRequest->getFileName( 'wpUploadFileURL' ) !== null) {
-			$uploadFormObj->mAuthor = $uploadFormObj->mRequest->getText( 'wpAuthor' );
-			$uploadFormObj->mSrcUrl = $uploadFormObj->mRequest->getText( 'wpSrcUrl' );
-			$uploadFormObj->mCharName = $uploadFormObj->mRequest->getText( 'wpCharName' );
-			$uploadFormObj->mUploadDescription = $uploadFormObj->mRequest->getText('wpUploadDescription');
-			$suffix = "";
-			if ($uploadFormObj->mUploadDescription != "" && $uploadFormObj->mComment == "") {
-				if ($uploadFormObj->mSrcUrl != "") {
-					$suffix .= " ";
+	public static function onBeforeProcessing( &$uploadFormObj ) {
+		$request = $uploadFormObj->getRequest();
+		if( $request->getFileName( 'wpUploadFile' ) !== null ||
+			$request->getText( 'wpUploadFileURL' ) !== null
+		) {
+			$authors = $request->getText( 'wpAuthor' );
+			$srcUrl = $request->getText( 'wpSrcUrl' );
+			$charNames = $request->getText( 'wpCharName' );
+			$suffix = '';
+			if ($uploadFormObj->mUploadDescription != '' && $uploadFormObj->mComment == '') {
+				if ($srcUrl != '') {
+					$suffix = ' ';
 				}
 				$suffix .= $uploadFormObj->mUploadDescription;
 			}
 
-			foreach (explode(" ", $uploadFormObj->mAuthor) as $author) {
-				if ($author != "") {
+			foreach (explode(' ', $authors) as $author) {
+				if ($author != '') {
 					$uploadFormObj->mComment .= "[[分类:作者:$author]]";
 				}
 			}
 
-			foreach (explode(" ", $uploadFormObj->mCharName) as $catagory) {
-				if ($catagory != "") {
+			foreach (explode(' ', $charNames) as $catagory) {
+				if ($catagory != '') {
 					$uploadFormObj->mComment .= "[[分类:$catagory]]";
 				}
 			}
-			if ($uploadFormObj->mSrcUrl != "") {
-				$uploadFormObj->mComment .= "源地址:".$uploadFormObj->mSrcUrl;
+			if ($srcUrl != '') {
+				$uploadFormObj->mComment .= '源地址：' . $srcUrl;
 			}
 			$uploadFormObj->mComment .= $suffix;
 		}
 
-		return $uploadFormObj;
+		return true;
 	}
 }
