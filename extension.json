@@ -2,8 +2,8 @@
 	"name": "MoeUpload",
 	"author": "March, nybux.tsui, XpAhH, baskice, dreamnong and AnnAngela",
 	"url": "https://github.com/moegirlwiki/MoeUpload",
-	"descriptionmsg": "moemoeQdec",
 	"version": "1.3.0",
+	"descriptionmsg": "moeupload-dec",
 	"license-name": "BSD-2-Clause",
 	"type": "parserhook",
 	"MessagesDirs": {
@@ -34,17 +34,17 @@
 				"MoeUpload/MoeUpload.js"
 			],
 			"messages": [
-				"moemoeQMoe",
-				"moemoeQCharName",
-				"moemoeQAuthor",
-				"moemoeQSrcUrl",
-				"moemoeQdec",
-				"moemoeQForManagementOnly",
-				"moemoeQPageInsteadOfImg",
-				"moemoeQSameAsSourceURL",
-				"moemoeQNoFile",
-				"moemoeQNoDetail",
-				"moemoeQHaveSymbol"
+				"moeupload-Moe",
+				"moeupload-CharName",
+				"moeupload-Author",
+				"moeupload-SrcUrl",
+				"moeupload-dec",
+				"moeupload-ForManagementOnly",
+				"moeupload-PageInsteadOfImg",
+				"moeupload-SameAsSourceURL",
+				"moeupload-NoFile",
+				"moeupload-NoDetail",
+				"moeupload-HaveSymbol"
 			],
 			"targets": [
 				"desktop"

@@ -2,7 +2,7 @@ $(function() {
     var wpUploadDescription = $("#wpUploadDescription");
     if (wpUploadDescription.length > 0) {
         var toggleLink = $("<a/>");
-        toggleLink.attr("href", "javascript:void(0);").text(mw.msg("moemoeQForManagementOnly")).on("click", function() {
+        toggleLink.attr("href", "javascript:void(0);").text(mw.msg("moeupload-ForManagementOnly")).on("click", function() {
             wpUploadDescription.slideToggle();
             return false;
         });
@@ -20,9 +20,9 @@ $(function() {
     wpSrcUrl.on("change blur", function() {
         var str = wpSrcUrl.val().trim();
         if (/.(?:ogg|ogv|oga|flac|opus|wav|webm|mp3|png|gif|jpg|jpeg|webp|svg|pdf|ppt|jp2|doc|docx|xls|xlsx|psd|sai|swf|mp4)$/i.test(str)) {
-            upLoadFileUrlmsg.show().find("td").text(mw.msg("moemoeQPageInsteadOfImg"));
+            upLoadFileUrlmsg.show().find("td").text(mw.msg("moeupload-PageInsteadOfImg"));
         } else if ($("#wpUploadFileURL").val() === str) {
-            upLoadFileUrlmsg.show().find("td").text(mw.msg("moemoeQSameAsSourceURL"));
+            upLoadFileUrlmsg.show().find("td").text(mw.msg("moeupload-SameAsSourceURL"));
         } else {
             upLoadFileUrlmsg.hide();
         }
@@ -44,7 +44,7 @@ $(function() {
         var returnValue = true;
         var ifHaveFile = $($('input[name="wpSourceType"]:checked').val() == "url" ? "#wpUploadFileURL" : "#wpUploadFile").val() !== "";
         if (!ifHaveFile) {
-            $("#mw-htmlform-source").parent().before(errorP.clone().addClass("uploadFormMsg").text(mw.msg("moemoeQNoFile")));
+            $("#mw-htmlform-source").parent().before(errorP.clone().addClass("uploadFormMsg").text(mw.msg("moeupload-NoFile")));
             returnValue = false;
         }
         //三选一
@@ -52,7 +52,7 @@ $(function() {
         if (haveNoDetail.length === 3) {
             haveNoDetail.addClass("inputError");
             var noDetailRow = uploadFormMsgRow.clone();
-            noDetailRow.find("td").text(mw.msg("moemoeQNoDetail"));
+            noDetailRow.find("td").text(mw.msg("moeupload-NoDetail"));
             haveNoDetail.first().closest("tr").before(noDetailRow);
             returnValue = false;
         }
@@ -61,7 +61,7 @@ $(function() {
         if (haveSymbol.length > 0) {
             haveSymbol.addClass("inputError");
             var haveSymbolRow = uploadFormMsgRow.clone();
-            haveSymbolRow.find("td").text(mw.msg("moemoeQHaveSymbol"));
+            haveSymbolRow.find("td").text(mw.msg("moeupload-HaveSymbol"));
             haveSymbol.first().closest("tr").before(haveSymbolRow);
             returnValue = false;
         }
@@ -77,7 +77,7 @@ $(function() {
             var body = $("body");
             for (var i = 0; i < 20; i++) {
                 body.append(
-                    $("<div/>").text(mw.msg("moemoeQMoe")).css({
+                    $("<div/>").text(mw.msg("moeupload-Moe")).css({
                         color: "#3FFC2E",
                         "font-size": 54 + 30 * Math.random(),
                         position: "fixed",
