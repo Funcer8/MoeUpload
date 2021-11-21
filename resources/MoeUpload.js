@@ -58,7 +58,10 @@ $(function() {
             returnValue = false;
         }
         //符号
-        var haveSymbol = $("#wpCharName, #wpAuthor, #wpSrcUrl").filter(function() { return /[。（）#$%^&*]/.test($(this).val()); });
+		const regexp = new RegExp(mw.msg("moeupload-symbols-regexp"));
+        var haveSymbol = $("#wpCharName, #wpAuthor, #wpSrcUrl").filter(function() {
+			return regexp.test($(this).val());
+		});
         if (haveSymbol.length > 0) {
             haveSymbol.addClass("inputError");
             var haveSymbolRow = uploadFormMsgRow.clone();

@@ -47,7 +47,8 @@
 				"moeupload-SameAsSourceURL",
 				"moeupload-NoFile",
 				"moeupload-NoDetail",
-				"moeupload-HaveSymbol"
+				"moeupload-HaveSymbol",
+				"moeupload-symbols-regexp"
 			],
 			"targets": [
 				"desktop"
