@@ -49,7 +49,7 @@ $(function() {
         }
         //三选一
         var haveNoDetail = $("#wpCharName, #wpAuthor, #wpSrcUrl").filter(function() { return $(this).val().length === 0; });
-        if (haveNoDetail.length > 0) {
+        if (haveNoDetail.length === 3) {
             haveNoDetail.addClass("inputError");
             var noDetailRow = uploadFormMsgRow.clone();
             noDetailRow.find("td").text(mw.msg("moemoeQNoDetail"));
