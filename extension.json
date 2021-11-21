@@ -33,9 +33,6 @@
 			"scripts": [
 				"MoeUpload/MoeUpload.js"
 			],
-			"styles": [
-				"MoeUpload/MoeUpload.css"
-			],
 			"messages": [
 				"moemoeQMoe",
 				"moemoeQCharName",
