@@ -2,10 +2,10 @@
 	"name": "MoeUpload",
 	"author": "March, nybux.tsui, XpAhH, baskice, dreamnong and AnnAngela",
 	"url": "https://github.com/moegirlwiki/MoeUpload",
-	"version": "1.3.0",
 	"descriptionmsg": "moeupload-dec",
+	"version": "1.3.1",
 	"license-name": "BSD-2-Clause",
-	"type": "parserhook",
+	"type": "specialpage",
 	"MessagesDirs": {
 		"MoeUpload": [
 			"i18n"
