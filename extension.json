@@ -23,6 +23,9 @@
 		],
 		"UploadForm:initial": [
 			"MoeUploadHooks::onUploadForm_initial"
+		],
+		"MakeGlobalVariablesScript": [
+			"MoeUploadHooks::onMakeGlobalVariablesScript"
 		]
 	},
 	"ResourceModules": {

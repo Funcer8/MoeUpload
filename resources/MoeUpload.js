@@ -19,7 +19,8 @@ $(function() {
     wpSrcUrl.closest("tr").after(upLoadFileUrlmsg);
     wpSrcUrl.on("change blur", function() {
         var str = wpSrcUrl.val().trim();
-        if (/.(?:ogg|ogv|oga|flac|opus|wav|webm|mp3|png|gif|jpg|jpeg|webp|svg|pdf|ppt|jp2|doc|docx|xls|xlsx|psd|sai|swf|mp4)$/i.test(str)) {
+		const supported = mw.config.get('wgFileExtensions').join('|');
+        if (new RegExp('\.(?:' + supported + ')$', 'i').test(str)) {
             upLoadFileUrlmsg.show().find("td").text(mw.msg("moeupload-PageInsteadOfImg"));
         } else if ($("#wpUploadFileURL").val() === str) {
             upLoadFileUrlmsg.show().find("td").text(mw.msg("moeupload-SameAsSourceURL"));

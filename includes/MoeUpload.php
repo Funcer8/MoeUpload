@@ -1,6 +1,8 @@
 <?php
-//在上传界面增加三个字段
 
+use MediaWiki\MediaWikiServices;
+
+//在上传界面增加三个字段
 class MoeUploadHooks {
 	public static function onUploadForm_initial( $specialPage ) {
 		$specialPage->getOutput()->addModules( 'ext.MoeUpload' );
@@ -71,5 +73,12 @@ class MoeUploadHooks {
 		}
 
 		return true;
+	}
+
+	public static function onMakeGlobalVariablesScript( array &$vars, OutputPage $out ) {
+		if ( $out->getTitle()->getPrefixedDBkey() === 'Special:Upload' ) {
+			$config = MediaWikiServices::getInstance()->getMainConfig();
+			$vars['wgFileExtensions'] = $config->get( 'wgFileExtensions' );
+		}
 	}
 }
