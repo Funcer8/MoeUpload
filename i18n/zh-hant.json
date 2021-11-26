@@ -10,7 +10,7 @@
 	"moeupload-PageInsteadOfImg": "建議您在此處輸入頁面地址，而非檔案連結。",
 	"moeupload-SameAsSourceURL": "您輸入的源地址與檔案的來源 URL 相同，建議您在此處輸入頁面地址，而非檔案連結。",
 	"moeupload-NoFile": "您既未選擇檔案也未輸入地址，請檢查。",
-	"moeupload-NoDetail": "＞_＜ $1不能全部為空~！",
+	"moeupload-NoDetail": "＞_＜ “人物名”、“作者”和“源地址”不能全部為空~！",
 	"moeupload-HaveSymbol": "＞_＜ $1不能包含特殊符號~！請不要寫多餘的內容",
 	"moeupload-symbols-regexp": "[。（）#$%^&*]"
 }
