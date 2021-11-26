@@ -57,17 +57,18 @@ class MoeUploadHooks {
 
 			foreach (explode(' ', $authors) as $author) {
 				if ($author != '') {
-					$uploadFormObj->mComment .= "[[分类:作者:$author]]";
+					// Canonical namespace should be always preferred
+					$uploadFormObj->mComment .= '[[Category:' . $uploadFormObj->msg( 'moeupload-category-author', $author )->inContentLanguage()->text() . ']]';
 				}
 			}
 
 			foreach (explode(' ', $charNames) as $catagory) {
 				if ($catagory != '') {
-					$uploadFormObj->mComment .= "[[分类:$catagory]]";
+					$uploadFormObj->mComment .= '[[Category:' . $uploadFormObj->msg( 'moeupload-category-char', $catagory )->inContentLanguage()->text() . ']]';
 				}
 			}
 			if ($srcUrl != '') {
-				$uploadFormObj->mComment .= '源地址：' . $srcUrl;
+				$uploadFormObj->mComment .= $uploadFormObj->msg( 'moeupload-SrcUrl' )->inContentLanguage()->text() . $srcUrl;
 			}
 			$uploadFormObj->mComment .= $suffix;
 		}

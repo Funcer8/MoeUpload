@@ -4,6 +4,8 @@
 	"moeupload-Author": "Author:",
 	"moeupload-SrcUrl": "Origin Source URL:",
 	"moeupload-dec": "[http://en.moegirl.org.cn/ MoegirlPedia] style uploadpage enhance.",
+	"moeupload-category-char": "$1",
+	"moeupload-category-author": "Author: $1",
 	"moeupload-ForManagementOnly": "For management only",
 	"moeupload-PageInsteadOfImg": "We recommend that you enter the page address here instead of a link to the file.",
 	"moeupload-SameAsSourceURL": "The Origin Source URL you entered is the same as the Source URL above, we recommend that you enter the page address here instead of a link to the file.",

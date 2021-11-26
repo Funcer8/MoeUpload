@@ -4,6 +4,8 @@
 	"moeupload-Author": "作者：",
 	"moeupload-SrcUrl": "源地址：",
 	"moeupload-dec": "[http://zh.moegirl.org.cn/ 萌娘百科]式上传页面增强插件",
+	"moeupload-category-char": "$1",
+	"moeupload-category-author": "作者:$1",
 	"moeupload-ForManagementOnly": "仅供管理使用",
 	"moeupload-PageInsteadOfImg": "建议您在此处输入页面地址，而非文件链接。",
 	"moeupload-SameAsSourceURL": "您输入的源地址与文件的来源地址相同，建议您在此处输入页面地址，而非文件链接。",
