@@ -39,7 +39,7 @@ $(function() {
 		uploadForm.find(".inputError").removeClass("inputError");
 		uploadForm.find(".uploadFormMsg").remove();
 		var wgUserGroups = mw.config.get("wgUserGroups");
-		if (wgUserGroups.incldes("sysop") || wgUserGroups.incldes("patroller") || mw.util.getParamValue("disableUploadCheck") === "true") {
+		if (wgUserGroups.includes("sysop") || wgUserGroups.includes("patroller") || mw.util.getParamValue("disableUploadCheck") === "true") {
 			return true;
 		}
 		var returnValue = true;
