@@ -2,13 +2,18 @@
 
 use MediaWiki\MediaWikiServices;
 
-//在上传界面增加三个字段
-class MoeUploadHooks {
+// Extends SpecialUpload for the access to SpecialUpload::showUploadError
+class MoeUploadHooks extends SpecialUpload {
 	public static function onUploadForm_initial( $specialPage ) {
 		$specialPage->getOutput()->addModules( 'ext.MoeUpload' );
 		return true;
 	}
 
+	/**
+	 * Add three fields on Special:Upload for categories and descriptions.
+	 * @param mixed[] $descriptor
+	 * @return true
+	 */
 	public static function onUploadFormInitDescriptor( &$descriptor ) {
 		$descriptor += [
 			'CharName' => [
@@ -47,6 +52,11 @@ class MoeUploadHooks {
 			$authors = $request->getText( 'wpAuthor' );
 			$srcUrl = $request->getText( 'wpSrcUrl' );
 			$charNames = $request->getText( 'wpCharName' );
+			if ( $authors === '' && $srcUrl === '' && $charNames === '' ) {
+				// Seems very hacky to use SpecialUpload::showUploadError, but it works fine
+				$uploadFormObj->showUploadError( $uploadFormObj->msg( 'moeupload-NoDetail' )->text() );
+				return false;
+			}
 			$suffix = '';
 			if ($uploadFormObj->mUploadDescription != '' && $uploadFormObj->mComment == '') {
 				if ($srcUrl != '') {
