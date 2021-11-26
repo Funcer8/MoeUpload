@@ -1,8 +1,8 @@
 {
 	"moeupload-Moe": "Moe",
-	"moeupload-CharName": "Character name",
-	"moeupload-Author": "Author",
-	"moeupload-SrcUrl": "Origin Source URL",
+	"moeupload-CharName": "Character name:",
+	"moeupload-Author": "Author:",
+	"moeupload-SrcUrl": "Origin Source URL:",
 	"moeupload-dec": "[http://en.moegirl.org.cn/ MoegirlPedia] style uploadpage enhance.",
 	"moeupload-ForManagementOnly": "For management only",
 	"moeupload-PageInsteadOfImg": "We recommend that you enter the page address here instead of a link to the file.",

@@ -1,8 +1,8 @@
 {
 	"moeupload-Moe": "萌",
-	"moeupload-CharName": "人物名",
-	"moeupload-Author": "作者",
-	"moeupload-SrcUrl": "源地址",
+	"moeupload-CharName": "人物名：",
+	"moeupload-Author": "作者：",
+	"moeupload-SrcUrl": "源地址：",
 	"moeupload-dec": "[http://zh.moegirl.org.cn/ 萌娘百科]式上傳頁面增強插件",
 	"moeupload-ForManagementOnly": "僅供管理使用",
 	"moeupload-PageInsteadOfImg": "建議您在此處輸入頁面地址，而非檔案連結。",
