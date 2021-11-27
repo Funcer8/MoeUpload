@@ -31,6 +31,14 @@
 		}
 	},
 	"ResourceModules": {
+		"mediawiki.htmlform.checker": {
+			"packageFiles": [
+				"HtmlformChecker.js"
+			],
+			"dependencies": [
+				"mediawiki.util"
+			]
+		},
 		"ext.MoeUpload": {
 			"dependencies": [
 				"mediawiki.htmlform.checker"
