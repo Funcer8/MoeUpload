@@ -28,7 +28,7 @@ $(function() {
 			upLoadFileUrlmsg.hide();
 		}
 	});
-	/* XpAhH同学写的上传页面检测，未写注释禁止上传。管理员，巡查员不检测 */
+	/* XpAhH同学写的上传页面检测，未写注释禁止上传 */
 	$.extend($.easing, {
 		easeOutCirc: function(x, t, b, c, d) {
 			return c * Math.sqrt(1 - (t = t / d - 1) * t) + b;
@@ -38,8 +38,7 @@ $(function() {
 	uploadForm.on("submit", function() {
 		uploadForm.find(".inputError").removeClass("inputError");
 		uploadForm.find(".uploadFormMsg").remove();
-		var wgUserGroups = mw.config.get("wgUserGroups");
-		if (wgUserGroups.includes("sysop") || wgUserGroups.includes("patroller") || mw.util.getParamValue("disableUploadCheck") === "true") {
+		if (mw.config.get( 'wgMoeUploadSkipWarning' ) || mw.util.getParamValue("disableUploadCheck") === "true") {
 			return true;
 		}
 		var returnValue = true;

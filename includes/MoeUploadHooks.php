@@ -2,8 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 
-// Extends SpecialUpload for the access to SpecialUpload::showUploadError
-class MoeUploadHooks extends SpecialUpload {
+class MoeUploadHooks {
 	public static function onUploadForm_initial( $specialPage ) {
 		$specialPage->getOutput()->addModules( 'ext.MoeUpload' );
 		return true;
@@ -44,6 +43,13 @@ class MoeUploadHooks extends SpecialUpload {
 		return true;
 	}
 
+	public static function onUploadCreateFromRequest( $type, &$className ) {
+		$uploadHandlers = [ 'Stash', 'File', 'Url' ];
+		if ( $className === null && in_array( $type, $uploadHandlers ) ) {
+			$className = 'MoeUploadFrom' . $type;
+		}
+	}
+
 	public static function onBeforeProcessing( &$uploadFormObj ) {
 		$request = $uploadFormObj->getRequest();
 		if( $request->getFileName( 'wpUploadFile' ) !== null ||
@@ -52,11 +58,6 @@ class MoeUploadHooks extends SpecialUpload {
 			$authors = $request->getText( 'wpAuthor' );
 			$srcUrl = $request->getText( 'wpSrcUrl' );
 			$charNames = $request->getText( 'wpCharName' );
-			if ( $authors === '' && $srcUrl === '' && $charNames === '' ) {
-				// Seems very hacky to use SpecialUpload::showUploadError, but it works fine
-				$uploadFormObj->showUploadError( $uploadFormObj->msg( 'moeupload-NoDetail' )->text() );
-				return false;
-			}
 			$suffix = '';
 			if ($uploadFormObj->mUploadDescription != '' && $uploadFormObj->mComment == '') {
 				if ($srcUrl != '') {
@@ -86,10 +87,18 @@ class MoeUploadHooks extends SpecialUpload {
 		return true;
 	}
 
+	public static function onUploadVerifyUpload( UploadBase $upload, User $user, $props, $comment, $pageText, &$error ) {
+		if ( substr( get_class( $upload ), 0, 13 ) === 'MoeUploadFrom' &&
+			$upload->mCharNames === '' && $upload->mAuthors === '' && $upload->mSrcUrl === '' &&
+			!$user->isAllowed( 'moeupload-skipwarning' )
+		) {
+			$error = 'moeupload-NoDetail';
+		}
+	}
+
 	public static function onMakeGlobalVariablesScript( array &$vars, OutputPage $out ) {
-		if ( $out->getTitle()->getPrefixedDBkey() === 'Special:Upload' ) {
-			$config = MediaWikiServices::getInstance()->getMainConfig();
-			$vars['wgFileExtensions'] = $config->get( 'wgFileExtensions' );
+		if ( $out->getTitle()->isSpecial( 'Upload' ) ) {
+			$vars['wgMoeUploadSkipWarning'] = $out->getUser()->isAllowed( 'moeupload-skipwarning' );
 		}
 	}
 }

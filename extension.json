@@ -12,21 +12,23 @@
 		]
 	},
 	"AutoloadClasses": {
-		"MoeUploadHooks": "includes/MoeUpload.php"
+		"MoeUploadHooks": "includes/MoeUploadHooks.php",
+		"MoeUploadFromFile": "includes/MoeUploadFromFile.php",
+		"MoeUploadFromUrl": "includes/MoeUploadFromUrl.php",
+		"MoeUploadFromStash": "includes/MoeUploadFromStash.php"
 	},
 	"Hooks": {
-		"UploadFormInitDescriptor": [
-			"MoeUploadHooks::onUploadFormInitDescriptor"
-		],
-		"UploadForm:BeforeProcessing": [
-			"MoeUploadHooks::onBeforeProcessing"
-		],
-		"UploadForm:initial": [
-			"MoeUploadHooks::onUploadForm_initial"
-		],
-		"MakeGlobalVariablesScript": [
-			"MoeUploadHooks::onMakeGlobalVariablesScript"
-		]
+		"UploadForm:initial": "MoeUploadHooks::onUploadForm_initial",
+		"UploadFormInitDescriptor": "MoeUploadHooks::onUploadFormInitDescriptor",
+		"UploadCreateFromRequest": "MoeUploadHooks::onUploadCreateFromRequest",
+		"UploadForm:BeforeProcessing": "MoeUploadHooks::onBeforeProcessing",
+		"UploadVerifyUpload": "MoeUploadHooks::onUploadVerifyUpload",
+		"MakeGlobalVariablesScript": "MoeUploadHooks::onMakeGlobalVariablesScript"
+	},
+	"GroupPermissions": {
+		"sysop": {
+			"moeupload-skipwarning": true
+		}
 	},
 	"ResourceModules": {
 		"ext.MoeUpload": {
