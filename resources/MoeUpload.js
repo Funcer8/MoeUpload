@@ -29,11 +29,6 @@ $(function() {
 		}
 	});
 	/* XpAhH同学写的上传页面检测，未写注释禁止上传 */
-	$.extend($.easing, {
-		easeOutCirc: function(x, t, b, c, d) {
-			return c * Math.sqrt(1 - (t = t / d - 1) * t) + b;
-		}
-	});
 	var uploadForm = $("#mw-upload-form");
 	uploadForm.on("submit", function() {
 		uploadForm.find(".inputError").removeClass("inputError");
@@ -71,36 +66,6 @@ $(function() {
 		/*url提交验证*/
 		if (upLoadFileUrlmsg.is(":visible")) {
 			returnValue = false;
-		}
-		$('html,body').animate({
-			scrollTop: uploadForm.find(".uploadFormMsg").first().offset().top - 48
-		}, 0);
-		uploadForm.find(".uploadFormMsg");
-		if (!returnValue) {
-			var body = $("body");
-			for (var i = 0; i < 20; i++) {
-				body.append(
-					$("<div/>").text(mw.msg("moeupload-Moe")).css({
-						color: "#3FFC2E",
-						"font-size": 54 + 30 * Math.random(),
-						position: "fixed",
-						left: screen.availWidth * Math.random(),
-						top: screen.availHeight * Math.random()
-					}).animate(
-						{
-							opacity: 0.2,
-							"font-size": 54 + 80 * Math.random(),
-							left: screen.availWidth * Math.random(),
-							top: -100 - Math.random() * 300
-						},
-						2000,
-						"easeOutCirc",
-						function() {
-							this.remove();
-						}
-					)
-				);
-			}
 		}
 		return returnValue;
 	});
