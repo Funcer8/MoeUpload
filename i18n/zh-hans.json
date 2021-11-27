@@ -10,6 +10,6 @@
 	"moeupload-SameAsSourceURL": "您输入的源地址与文件的来源地址相同，建议您在此处输入页面地址，而非文件链接。",
 	"moeupload-NoFile": "您既未选择文件也未输入来源地址，请检查。",
 	"moeupload-NoDetail": "＞_＜ “人物名”、“作者”和“源地址”不能全部为空~！",
-	"moeupload-HaveSymbol": "＞_＜ $1不能包含特殊符号~！请不要写多余的内容",
-	"moeupload-symbols-regexp": "[。（）#$%^&*]"
+	"moeupload-HaveSymbol": "＞_＜ 该字段不能包含特殊符号~！请不要写多余的内容",
+	"moeupload-symbols-regexp": "[。（）$%^&*]"
 }
