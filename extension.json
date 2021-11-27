@@ -33,7 +33,7 @@
 	"ResourceModules": {
 		"ext.MoeUpload": {
 			"dependencies": [
-				"mediawiki.jqueryMsg"
+				"mediawiki.htmlform.checker"
 			],
 			"scripts": [
 				"MoeUpload.js"

@@ -10,6 +10,6 @@
 	"moeupload-SameAsSourceURL": "The Origin Source URL you entered is the same as the Source URL above, we recommend that you enter the page address here instead of a link to the file.",
 	"moeupload-NoFile": "You have neither selected a file nor entered an source URL. Please check.",
 	"moeupload-NoDetail": "＞_＜ \"Character name\", \"Author\" and \"Origin Source URL\" cannot all be empty~!",
-	"moeupload-HaveSymbol": "＞_＜ $1 cannot contain special symbols~!",
-	"moeupload-symbols-regexp": "[。（）#$%^&*]"
+	"moeupload-HaveSymbol": "＞_＜ This field cannot contain special symbols~!",
+	"moeupload-symbols-regexp": "[。（）$%^&*]"
 }
